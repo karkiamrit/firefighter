@@ -8,6 +8,8 @@ const nextConfig = {
       { hostname: "cdn.pixabay.com" },
       { hostname: "i.ibb.co" },
       { hostname: "images.pexels.com" },
+      { hostname: "images.unsplash.com" },
+      { hostname: "www.pexels.com" },
     ],
   },
 };

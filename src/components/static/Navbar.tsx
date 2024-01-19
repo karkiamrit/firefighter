@@ -32,9 +32,9 @@ const services: {
   icon?: React.ReactNode;
 }[] = [
   {
-    title: 'Events',
+    title: 'Alerts & Warnings',
     href: '#',
-    description: 'Participate In Events.',
+    description: 'Get Alerts and Warnings of Fire and other disasters',
     icon: <Icon type="calendar" size={40} color="#e82e47" />,
   },
   {
@@ -68,6 +68,10 @@ const more_actions: {
   {
     title: 'About',
     href: '/about',
+  },
+  {
+    title: 'Home',
+    href: '/',
   },
   {
     title: 'Download App',
@@ -132,6 +136,27 @@ export default function Navbar() {
           </Link>
           <NavigationMenuList className="flex-col md:flex-row w-full">
             <NavigationMenuItem>
+              <Link href="/" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Home
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/about" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  About
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/blogs" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Blogs
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
               <NavigationMenuTrigger>Services</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
@@ -169,54 +194,14 @@ export default function Navbar() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/blogs" legacyBehavior passHref>
+              <Link href="/faqs" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Blogs
+                  FAQs
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
-
-            <NavigationMenuItem>
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <NavigationMenuTrigger>More</NavigationMenuTrigger>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  {more_actions.map((item) => {
-                    return (
-                      <Link
-                        href={item.href}
-                        key={item.href}
-                        target={item.target}
-                      >
-                        <DropdownMenuItem className="cursor-pointer">
-                          <motion.span whileHover={{ x: 8 }}>
-                            {item.title}
-                          </motion.span>
-                        </DropdownMenuItem>
-                      </Link>
-                    );
-                  })}
-                  <DropdownMenuSeparator />
-                  <div className="flex space-x-5">
-                    {social_links.map((item) => {
-                      return (
-                        <DropdownMenuItem asChild key={item.href}>
-                          <Link
-                            href={item.href}
-                            target={item.target}
-                            className="cursor-pointer"
-                          >
-                            {item.icon}
-                          </Link>
-                        </DropdownMenuItem>
-                      );
-                    })}
-                  </div>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </NavigationMenuItem>
           </NavigationMenuList>
+          
         </NavigationMenu>
       </MaxWidthWrapper>
     </header>
