@@ -1,4 +1,4 @@
-import { DollarSign, Filter, Moon, Zap } from 'lucide-react';
+import { DollarSign, Filter, Flame, Moon, SkullIcon, UserSearch, Zap } from 'lucide-react';
 import React from 'react';
 import Icon from '@/common/icons';
 
@@ -13,19 +13,20 @@ const Features = () => {
       title: 'Forest Fire Prediction',
       description:
         'Access to our AI/ML based Forest Fire Prediction System, Which Can Help You To Predict Forest Fire.',
-      icon: <Icon type="calendar" size={100} color="#e82e47" />,
+      icon: <Flame type="flame" size={100} color="#e82e47" />
+      ,
     },
     {
       title: 'Warning System',
       description:
         'Warn Your Friends and Family About Forest Fire, So That They Can Take Precautions.',
-      icon: <Icon type="certificate" size={100} color="#e82e47" />,
+      icon: <SkullIcon  type="warning" size={100} color="#e82e47" />,
     },
     {
       title: 'Emergency Contact',
       description:
         'Access to emergency contact numbers, which can help you to contact the nearest fire station.',
-      icon: <Icon type="career" size={100} color="#e82e47" />,
+      icon: <UserSearch  type="career" size={100} color="#e82e47" />,
     },
     {
       title: 'Educational Contents',
