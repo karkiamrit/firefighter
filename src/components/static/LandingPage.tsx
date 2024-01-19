@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import landingImage from '@/../public/landing-page.webp';
+import landingImage from '@/../public/fire.jpg';
 import {
   MdOutlineArrowRightAlt,
   MdInstallMobile,
@@ -48,7 +48,7 @@ const LandingPage = () => {
           </div>
           <div className="relative lg:col-span-5 lg:-mr-8 xl:col-span-6">
             <Image
-              className="aspect-[3/2]  object-cover lg:aspect-[4/3] lg:h-[550px] xl:aspect-[16/9]"
+              className="aspect-[3/2]  object-contain rounded-lg shadow-blue-600 lg:aspect-[4/3] lg:h-[550px] xl:aspect-[16/9]"
               src={landingImage}
               alt="girl with the degree"
             />
