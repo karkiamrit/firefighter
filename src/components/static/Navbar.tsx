@@ -16,6 +16,8 @@ import {
 } from '@/components/ui/navigation-menu';
 import MaxWidthWrapper from '@/components/wrapper/MaxWidthWrapper';
 import { motion } from 'framer-motion';
+import { Button } from '../ui/button';
+import { AlignCenter, Menu, MenuIcon, MenuSquare } from 'lucide-react';
 
 const services: {
   title: string;
@@ -45,26 +47,58 @@ const services: {
   {
     title: 'Educational Contents | Blogs',
     href: '#',
-    description: 'Get contents so that you can be aware of the fire and other disasters',
+    description:
+      'Get contents so that you can be aware of the fire and other disasters',
     icon: <Icon type="calendar" size={40} color="#e82e47" />,
   },
 ];
 
 export default function Navbar() {
+  const [isMenuOpen, setMenuOpen] = React.useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
   return (
     <header className="border shadow-md py-4 z-20 sticky top-0 w-full bg-white">
       <MaxWidthWrapper>
-        <NavigationMenu>
+      <NavigationMenu>
           <Link href="/">
             <Icon
               type="logo"
               size={120} // Adjusted size for mobile
               height={60} // Adjusted height for mobile
               color="#ff233d"
-              className="me-3 md:me-5" // Adjusted margin for mobile
+              className="me-3 md:me-5"
             />
           </Link>
-          <NavigationMenuList className="flex-col md:flex-row w-full">
+          <Button
+            onClick={toggleMenu}
+            variant="outline"
+            className={`block md:hidden absolute top-4 left-96 ml-20 pb-2 border-primary text-sm cursor-pointer focus:outline-none ${
+              isMenuOpen ? 'hidden' : 'block'
+            }`}
+          >
+            {/* Hamburger menu icon */}
+            <MenuSquare type="menu" size={20} color="#ff233d" className='mb-2' />
+          </Button>
+          <Button
+            onClick={toggleMenu}
+            variant="outline"
+            
+            className={`block md:hidden absolute top-4 left-96 ml-20 pb-2 border-primary cursor-pointer focus:outline-none ${
+              isMenuOpen ? 'block' : 'hidden'
+            }`}
+          >
+            {/* Close menu icon */}
+            <AlignCenter type="close" size={20}  color="#ff233d" />
+          </Button>
+
+          <NavigationMenuList
+            className={`flex-col md:flex-row w-full md:flex ${
+              isMenuOpen ? 'block' : 'hidden'
+            }`}
+          >
             <NavigationMenuItem>
               <Link href="/" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -109,7 +143,7 @@ export default function Navbar() {
             <NavigationMenuItem>
               <NavigationMenuTrigger>Help</NavigationMenuTrigger>
               <NavigationMenuContent data-motion="to-end">
-                <ul className="grid gap-3 p-4 md:w-[400px]  lg:grid-cols-[1fr] ">
+                <ul className="grid gap-3 p-4 md:w-[400px] lg:grid-cols-[1fr] ">
                   <motion.span whileHover={{ x: 8 }}>
                     <ListItem href="/" title="Helpline: +01 256482" />
                   </motion.span>
