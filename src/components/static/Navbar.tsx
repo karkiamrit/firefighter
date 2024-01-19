@@ -14,14 +14,6 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-
 import MaxWidthWrapper from '@/components/wrapper/MaxWidthWrapper';
 import { motion } from 'framer-motion';
 
@@ -38,85 +30,23 @@ const services: {
     icon: <Icon type="calendar" size={40} color="#e82e47" />,
   },
   {
-    title: 'Certificate Management',
+    title: 'Live Fire location',
     href: '#',
     description:
-      'Manage Your Certificates and Achievements in single platform.',
+      'Live Fire location and status of the fire and other disasters within map',
     icon: <Icon type="calendar" size={40} color="#e82e47" />,
   },
   {
-    title: 'Career Counseling',
+    title: 'Posibilities of Firing Area',
     href: '#',
-    description: 'Get More out of us for your great career.',
+    description: 'According to the fire posibilities 1 | 0 you can get alert',
     icon: <Icon type="calendar" size={40} color="#e82e47" />,
   },
   {
-    title: 'Educational Contents',
+    title: 'Educational Contents | Blogs',
     href: '#',
-    description: 'Get contents you thrive for',
+    description: 'Get contents so that you can be aware of the fire and other disasters',
     icon: <Icon type="calendar" size={40} color="#e82e47" />,
-  },
-];
-
-const more_actions: {
-  title: string;
-  href: string;
-  description?: string;
-  target?: string;
-  icon?: React.ReactNode;
-}[] = [
-  {
-    title: 'About',
-    href: '/about',
-  },
-  {
-    title: 'Home',
-    href: '/',
-  },
-  {
-    title: 'Download App',
-    href: '/',
-    target: '_blank',
-  },
-  {
-    title: 'Contact',
-    href: '/contact',
-  },
-  {
-    title: 'Press Coverage',
-    href: '/press',
-  },
-  {
-    title: 'Career',
-    href: '/career',
-  },
-];
-
-const social_links: {
-  title: string;
-  href: string;
-  description?: string;
-  target?: string;
-  icon?: React.ReactNode;
-}[] = [
-  {
-    title: 'Facebook',
-    href: 'https://facebook.com/schoole',
-    target: '_blank',
-    icon: <Icon type="facebook" size={40} />,
-  },
-  {
-    title: 'Instagram',
-    href: 'https://instagram.com/schoole',
-    icon: <Icon type="instagram" size={40} />,
-    target: '_blank',
-  },
-
-  {
-    title: 'LinkedIn',
-    href: 'https://linkedin.com/in/schoole',
-    icon: <Icon type="linkedin" size={40} />,
-    target: '_blank',
   },
 ];
 
@@ -184,24 +114,15 @@ export default function Navbar() {
                     <ListItem href="/" title="Helpline: +01 256482" />
                   </motion.span>
                   <motion.span whileHover={{ x: 8 }}>
-                    <ListItem href="/" title="Message" />
+                    <ListItem href="/" title="Default msg: I need firefighters" />
                   </motion.span>
                   <motion.span whileHover={{ x: 8 }}>
-                    <ListItem href="/" title="Ticket" />
+                    <ListItem href="/" title="FAQs" />
                   </motion.span>
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
-
-            <NavigationMenuItem>
-              <Link href="/faqs" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  FAQs
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
           </NavigationMenuList>
-          
         </NavigationMenu>
       </MaxWidthWrapper>
     </header>

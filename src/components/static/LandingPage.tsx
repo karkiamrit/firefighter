@@ -19,10 +19,10 @@ const LandingPage = () => {
         <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
           <div className="flex flex-col  px-4 py-12 md:py-16 lg:col-span-7 lg:gap-x-6 lg:px-6 lg:py-24 xl:col-span-6">
             <h1 className="mt-8 text-3xl font-bold tracking-tight text-black md:text-4xl lg:text-5xl first-letter:text-primary ">
-              We care about your growth
+              Guardians of Green - FireFighters
             </h1>
             <p className="mt-8 text-lg text-gray-700">
-              Empowering Dream, Certifying Success...
+              Where Environmental Care Meets Innovation
             </p>
             <div className="my-5 space-y-4">
               <motion.div whileHover={{ x: 8 }}>
