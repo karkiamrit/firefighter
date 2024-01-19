@@ -1,6 +1,7 @@
 import React from 'react';
 import Icon from '@/common/icons';
 import Link from 'next/link';
+import { Flame } from 'lucide-react';
 
 const Footer = () => {
   interface Footer {
@@ -16,17 +17,24 @@ const Footer = () => {
     {
       logo: (
         <Link href="/">
-          <Icon type="logo" color="#ff233d" size={130} />
-        </Link>
+            <Flame
+              type="logo"
+              size={100} // Adjusted size for mobile
+              height={40} // Adjusted height for mobile
+              color="#ff233d"
+              className=" md:me-5 bg-transparent-0" // Adjusted margin for mobile
+            />
+          </Link>
+          
       ),
       content: [
         {
-          title: 'About Us',
-          href: '/about',
-        },
-        {
           title: 'Company History',
           href: '/company-history',
+        },
+        {
+          title: 'About Us',
+          href: '/about',
         },
         {
           title: 'Our Vision',
@@ -46,15 +54,15 @@ const Footer = () => {
       header: 'Services',
       content: [
         {
-          title: 'Events',
+          title: 'Alert & Warnings',
           href: '/',
         },
         {
-          title: 'Certificate Management',
+          title: 'Live Fire Location',
           href: '/',
         },
         {
-          title: 'Career Counseling',
+          title: 'Possible Firing Areas',
           href: '/',
         },
         {
@@ -84,9 +92,9 @@ const Footer = () => {
           href: '/disclaimer',
         },
         {
-          title: 'Media Policy',
-          href: '/media-policy',
-        },
+          title: 'Refund Policy',
+          href: '/refund-policy',
+        }
       ],
     },
 
@@ -109,6 +117,11 @@ const Footer = () => {
           href: 'https://linkedin.com/in/schoole',
           target: '_blank',
         },
+        {
+          title: 'Twitter',
+          href: 'https://twitter.com/schoole',
+          target: '_blank',
+        }
       ],
     },
   ];
