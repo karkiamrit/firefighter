@@ -20,11 +20,6 @@ const Page = () => {
             />
 
         <div className="blog-content text-base text-gray-700 leading-7">
-        <div className="max-w-max rounded-full border border-primary bg-gray-50 p-1 px-3">
-              <p className="text-xs font-semibold leading-normal md:text-sm">
-                22 Jan, Suman Sharma &rarr;
-              </p>
-            </div>
           <p className="mb-4">
             <strong>Introduction:</strong> Nepal, with its breathtaking landscapes and diverse ecosystems, is facing a formidable environmental challenge — wildfires. In recent times, these wildfires have emerged as a significant issue, posing threats to the environment, biodiversity, and human settlements. Understanding the root causes and consequences of this phenomenon is crucial for developing effective strategies to mitigate the impact of wildfires in Nepal.
           </p>

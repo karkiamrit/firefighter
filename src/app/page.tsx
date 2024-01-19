@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import LandingPage from '@/components/static/LandingPage';
 import MaxWidthWrapper from '@/components/wrapper/MaxWidthWrapper';
 import TopEvent from '@/components/TopEvent';
+import Socials from '@/components/Socials';
 
 export default function Home() {
   return (
@@ -16,6 +17,9 @@ export default function Home() {
       </div>
       <MaxWidthWrapper>
         <TopEvent />
+        <div className="absolute right-10 top-60">
+          <Socials />
+        </div>
       </MaxWidthWrapper>
 
       <div className="relative w-full bg-light">
