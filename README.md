@@ -3,6 +3,8 @@ Where Environmental Care Meets Innovation
 
 ## Home Page
 <img src='./Screenshot (5).png' />
+<img src='./Screenshot 2024-01-20 223408.png'/>
+<img src='./Screenshot 2024-01-20 223433.png'/>
 
 
 # Forest Fire Monitoring and Alert System Documentation
