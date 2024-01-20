@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import landingImage from '@/../public/landing-page.webp';
+import landingImage from '@/../public/Fire Fighter (2).png';
 import {
   MdOutlineArrowRightAlt,
   MdInstallMobile,

@@ -10,7 +10,7 @@ import army from '@/../public/partners/nepal army.png'
 import redcross from '@/../public/partners/red cross.png'
 import apf from '@/../public/partners/apf.png'
 import nepal from '@/../public/partners/nepal scout.png'
-import nep from '@/../public/partners/national logo.jpg'
+import nep from '@/../public/partners/nepal.jpg'
 
 
 const menuItems = [
