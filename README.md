@@ -1,5 +1,5 @@
 # <img src='./fighterlogo (1).png' height='80px' width='150px'/> Fire Fighter - Guardians of Green
-Where Environmental Care Meets Innovation
+Where Environmental Care Meets Innovation and Technology
 
 ## Home Page
 <img src='./Screenshot (5).png' />
