@@ -1,22 +1,29 @@
-'use client'
+// Page.js
+"use client"
 import MaxWidthWrapper from '@/components/wrapper/MaxWidthWrapper';
-import React from 'react';
-import MapComponent from '@/components/map/Map';
+import React,{useState} from 'react';
+// import MapComponent from '@/components/map/Map';
+import dynamic from 'next/dynamic';
+
+const MapComponent = dynamic(() => import('@/components/map/Map'), { ssr: false });
 
 const Page = () => {
-  // Custom location for Kathmandu, Nepal
-  const kathmanduLocation: [number, number] = [27.7172, 85.324];
+  const [selectedLocation, setSelectedLocation] = useState<[number, number]>([
+    0,0
+  ]);
+
+  const handleLocationSelect = (location: [number, number]) => {
+    setSelectedLocation(location);
+  };
 
   return (
-    <>
-      <MaxWidthWrapper>
-        <MapComponent
-          zoom={15}
-          onSelectLocation={(location) => console.log('Selected Location:', location)}
-          center={kathmanduLocation}
-        />
-      </MaxWidthWrapper>
-    </>
+    <MaxWidthWrapper>
+       <MapComponent
+        zoom={15}
+        onSelectLocation={handleLocationSelect}
+        center={selectedLocation}
+      />
+    </MaxWidthWrapper>
   );
 };
 
