@@ -3,10 +3,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30%;
+    margin-top: 20%;
 }
 .loader {
-    width: 200px;
+    width: 100px;
     aspect-ratio: 1.154;
     position: relative;
     background: conic-gradient(
@@ -15,8 +15,7 @@
       #ff1919 1deg 120deg,
       #0000 121deg
     );
-    margin-top: 30%;
-    padding-top: 200px;
+    /* padding-top: 100px; */
 
     animation: l27-0 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
   }
