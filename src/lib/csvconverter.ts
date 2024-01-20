@@ -1,9 +1,11 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import  { useEffect } from 'react';
 import Papa from 'papaparse';
+import { useJsonStore } from '@/store/useJson.store';
 
 const CsvToJsonExample = () => {
-  const [jsonData, setJsonData] = useState([]);
+  // const [jsonData, setJsonData] = useState([]);
+  const { setJsonData } = useJsonStore();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,7 +37,7 @@ const CsvToJsonExample = () => {
     fetchData();
   }, []);
 
-  return JSON.stringify(jsonData, null, 2)
+  // console. JSON.stringify(jsonData, null, 2)
     
 };
 
