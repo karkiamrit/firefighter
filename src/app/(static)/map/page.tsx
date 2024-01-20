@@ -1,21 +1,27 @@
 // Page.js
+"use client"
 import MaxWidthWrapper from '@/components/wrapper/MaxWidthWrapper';
-import React from 'react';
-import MapComponent from '@/components/map/Map';
+import React,{useState} from 'react';
+// import MapComponent from '@/components/map/Map';
+import dynamic from 'next/dynamic';
+
+const MapComponent = dynamic(() => import('@/components/map/Map'), { ssr: false });
 
 const Page = () => {
-  const handleLocationSelection = (event:any) => {
-    const { lat, lng } = event.latlng;
-    console.log('Selected Location:', [lat, lng]);
-    // You can perform further actions with the selected location
+  const [selectedLocation, setSelectedLocation] = useState<[number, number]>([
+    0,0
+  ]);
+
+  const handleLocationSelect = (location: [number, number]) => {
+    setSelectedLocation(location);
   };
 
   return (
     <MaxWidthWrapper>
-      <MapComponent
+       <MapComponent
         zoom={15}
-        onSelectLocation={handleLocationSelection}
-        center={[27.7172, 85.324]}
+        onSelectLocation={handleLocationSelect}
+        center={selectedLocation}
       />
     </MaxWidthWrapper>
   );
