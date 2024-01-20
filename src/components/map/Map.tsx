@@ -4,27 +4,17 @@ import {
   MapContainer,
   TileLayer,
   Marker,
-  useMapEvents,
   useMap,
 } from 'react-leaflet';
 import { DivIcon, Icon } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import toast, { Toaster } from 'react-hot-toast';
-import { cn } from '@/lib/utils';
 
 interface MapProps {
   zoom: number;
   onSelectLocation: (location: [number, number]) => void;
   center?: [number, number];
 }
-
-// const customIcon = new Icon({
-//   iconUrl: '/marker.png',
-//   iconSize: [30, 31], // size of the icon
-//   iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
-//   popupAnchor: [1, -34], // point from which the popup should open relative to the iconAnchor
-//   shadowSize: [41, 41], // size of the shadow
-// });
 
 const fire = [
   {
@@ -68,9 +58,8 @@ const MapComponent: React.FC<MapProps> = ({
   const toastShownRef = useRef(false);
   const [customIcon, setCustomIcon] = useState<Icon | undefined>(undefined);
   const [flameIcon, setFlameIcon] = useState<Icon | undefined>(undefined);
-  
-
-  const CustomMarker = ({ position, size }: any) => (
+ 
+  const CustomMarker = ({ position }: any) => (
     <Marker
       position={position}
       icon={
@@ -81,10 +70,7 @@ const MapComponent: React.FC<MapProps> = ({
       }
       
     />
-    
   );
-
-
   useEffect(() => {
     if (center && center[0] !== 0 && center[1] !== 0) {
       setMarkerPosition(center);
@@ -146,12 +132,12 @@ const MapComponent: React.FC<MapProps> = ({
   
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col mt-10">
       <Toaster position="top-center" reverseOrder={false} />
       <MapContainer
         center={center || markerPosition}
         zoom={zoom}
-        className="h-[400px] w-[100%] rounded-2xl relative"
+        className="h-[700px] w-[100%] rounded-2xl relative"
       >
         
         <TileLayer
