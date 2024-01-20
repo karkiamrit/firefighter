@@ -138,3 +138,7 @@ Residents in the affected areas receive alerts through various channels:
 ## Conclusion
 
 The Forest Fire Monitoring and Alert System seamlessly integrate satellite-derived data, machine learning, and IoT sensors to enhance forest fire prevention and response efforts. By providing accurate predictions and real-time alerts, the system contributes to early detection, minimizing the impact of forest fires on communities and the environment.
+
+
+## link of ppt 
+https://www.canva.com/design/DAF6ZS7kMQU/Z5aoHCE3R5x91LY5TfpxDw/edit?utm_content=DAF6ZS7kMQU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
