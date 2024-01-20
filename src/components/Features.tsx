@@ -1,6 +1,7 @@
 import { DollarSign, Filter, Flame, Moon, Siren, SkullIcon, UserSearch, Zap } from 'lucide-react';
 import React from 'react';
 import Icon from '@/common/icons';
+import Link from 'next/link';
 
 const Features = () => {
   const features: {
@@ -11,6 +12,7 @@ const Features = () => {
   }[] = [
     {
       title: 'Forest Fire Prediction',
+      href: '/map',
       description:
         'Access to our AI/ML based Forest Fire Prediction System, Which Can Help You To Predict Forest Fire.',
       icon: <Flame type="flame" size={100} color="#e82e47" />
@@ -18,18 +20,21 @@ const Features = () => {
     },
     {
       title: 'Warning System',
+      href: '/',
       description:
         'Warn Your Friends and Family About Forest Fire, So That They Can Take Precautions.',
       icon: <SkullIcon  type="warning" size={100} color="#e82e47" />,
     },
     {
       title: 'Emergency Contact',
+      href: '/about',
       description:
         'Access to emergency contact numbers, which can help you to contact the nearest fire station.',
       icon: <Siren   type="career" size={100} color="#e82e47" />,
     },
     {
       title: 'Educational Contents',
+      href: '/vcontent',
       description:
         'We Offer Great Educational Contents For Our Public, Which Can Prepare them fight and prevent forest fire',
       icon: <Icon type="video" size={100} color="#e82e47" />,
@@ -43,6 +48,7 @@ const Features = () => {
           {features.map((feature, index) => {
             return (
               <div key={index}>
+                <Link href={ feature.href || '#'} passHref>
                 <div className="mx-auto flex  items-center justify-center rounded-full">
                   {feature.icon}
                 </div>
@@ -52,6 +58,7 @@ const Features = () => {
                 <p className="mt-4 text-sm text-gray-600">
                   {feature.description}
                 </p>
+                </Link>
               </div>
             );
           })}
