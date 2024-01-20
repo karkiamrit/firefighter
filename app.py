@@ -62,7 +62,7 @@ def predict():
 
 cred = credentials.Certificate("credentials.json")
 
-firebase_admin.initialize_app(cred, {"databaseURL": "https://firefighter-e0a95-default-rtdb.firebaseio.com"})
+firebase_admin.initialize_app(cred, {"databaseURL": "https://esp8266-data-transfer-default-rtdb.firebaseio.com/"})
 db_ref = db.reference('/')
 
 @app.route('/get_data', methods=['GET'])
@@ -76,33 +76,50 @@ def get_data():
 
     return jsonify(data)
 
-@app.route('/test', methods=['GET'])
-def test_route():
-    # Extract parameters from the URL
-    humidity = request.args.get('humidity')
-    soil_moisture = request.args.get('soilMoisture')
-    temp = request.args.get('temp')
+@app.route('/get_test_data', methods=['GET'])
+def get_test_data():
+    variables = ['humidity', 'soilMoisture', 'temp']
+    data = {}
 
     try:
-        # Convert parameters to float
-        humidity = float(humidity)
-        soil_moisture = float(soil_moisture)
-        temp = float(temp)
-    except ValueError:
-        return jsonify({"error": "Invalid parameter values. Please provide numeric values for humidity, soilMoisture, and temp."})
+        # Assuming you have a 'test' node in your Realtime Database
+        test_node = db_ref.child('test')
 
-    # Assuming you have a model.predict_proba function that accepts these features
-    features = np.array([[temp, humidity, soil_moisture]])
-    prediction = model.predict_proba(features)
-    probability_of_fire = prediction[0][1]
+        for var in variables:
+            # Fetch each variable under 'test' node and add it to the data dictionary
+            data[var] = test_node.child(var).get()
 
-    response = {
-        "prediction": probability_of_fire,
-        "message": "Your Forest is in Danger." if probability_of_fire > 0.5 else "Your Forest is safe.",
-        "probability_message": "Probability of fire occurring is {:.2f}".format(probability_of_fire)
-    }
+        return jsonify(data)
 
-    return jsonify(response)
+    except Exception as e:
+        return jsonify({"error": str(e)})
+
+# @app.route('/test', methods=['GET'])
+# def test_route():
+#     try:
+#         # Assuming you have a 'test' node in your Realtime Database
+#         test_node = db_ref.child('test')
+
+#         # Retrieve humidity, soil_moisture, and temp from Firebase
+#         humidity = float(test_node.child('humidity').get())
+#         soil_moisture = float(test_node.child('soilMoisture').get())
+#         temp = float(test_node.child('temp').get())
+
+#         # Your further processing logic here
+
+#         response = {
+#             "humidity": humidity,
+#             "soil_moisture": soil_moisture,
+#             "temp": temp,
+#             # Include other response data as needed
+#         }
+
+#         return jsonify(response)
+
+#     except ValueError:
+#         return jsonify({"error": "Invalid parameter values. Please provide numeric values for humidity, soilMoisture, and temp."})
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
