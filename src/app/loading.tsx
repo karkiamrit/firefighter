@@ -1,13 +1,16 @@
-import React from 'react';
+// LoadingComponent.jsx
 
-const Loading = () => {
+import React from 'react';
+import './style.css'; // Import the CSS file
+
+const LoadingComponent = () => {
   return (
     <>
-      <div className="text-center absolute top-1/3 z-20 left-1/2">
-        Loading....
+      <div className="main">
+        <div className="loader"></div>
       </div>
     </>
   );
 };
 
-export default Loading;
+export default LoadingComponent;
