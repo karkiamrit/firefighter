@@ -156,6 +156,13 @@ export default function Navbar() {
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
+          <NavigationMenuItem>
+              <Link href="/faqs" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  FAQs
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
       </MaxWidthWrapper>
@@ -191,6 +198,7 @@ const ListItem = React.forwardRef<React.ElementRef<'a'>, ListItemProps>(
             </span>
           </a>
         </NavigationMenuLink>
+       
       </li>
     );
   },
