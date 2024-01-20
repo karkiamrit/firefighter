@@ -76,7 +76,7 @@ def get_data():
 
     return jsonify(data)
 
-@app.route('/get_test_data', methods=['GET'])
+@app.route('/get_firebase_data', methods=['GET'])
 def get_test_data():
     variables = ['humidity', 'soilMoisture', 'temp']
     data = {}
