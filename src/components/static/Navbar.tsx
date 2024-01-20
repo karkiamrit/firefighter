@@ -152,6 +152,9 @@ export default function Navbar() {
                     <ListItem href="/vcontent" title="Videos" />
                   </motion.span>
                   <motion.span whileHover={{ x: 8 }}>
+                    <ListItem href="/crowdfunding" title="Crowd Funding" />
+                  </motion.span>
+                  <motion.span whileHover={{ x: 8 }}>
                     <ListItem href="/faqs" title="FAQs" />
                   </motion.span>
                 </ul>

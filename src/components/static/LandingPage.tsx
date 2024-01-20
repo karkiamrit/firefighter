@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import landingImage from '@/../public/fire.jpg';
+import landingImage from '@/../public/landing-page.webp';
 import {
   MdOutlineArrowRightAlt,
   MdInstallMobile,
@@ -17,7 +17,7 @@ const LandingPage = () => {
     <>
       <div className="relative w-full bg-light">
         <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
-          <div className="flex flex-col  px-4 py-12 md:py-16 lg:col-span-7 lg:gap-x-6 lg:px-6 lg:py-24 xl:col-span-6">
+          <div className="flex flex-col  px-4 ml- py-12 md:py-16 lg:col-span-7 lg:gap-x-6 lg:px-6 lg:py-24 xl:col-span-6">
             <h1 className="mt-8 text-3xl font-bold tracking-tight text-black md:text-4xl lg:text-5xl first-letter:text-primary ">
               Guardians of Green - FireFighters
             </h1>
@@ -48,7 +48,7 @@ const LandingPage = () => {
           </div>
           <div className="relative lg:col-span-5 lg:-mr-8 xl:col-span-6">
             <Image
-              className="aspect-[3/2]  object-contain rounded-lg shadow-blue-600 lg:aspect-[4/3] lg:h-[550px] xl:aspect-[16/9]"
+              className="aspect-[3/2]  object-cover  rounded-lg shadow-blue-600 lg:aspect-[4/3] lg:h-[550px] xl:aspect-[16/9]"
               src={landingImage}
               alt="girl with the degree"
             />

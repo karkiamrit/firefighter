@@ -11,7 +11,7 @@ const Page = () => {
           Unveiling the Challenge: Why Wildfires Are a Growing Concern in Nepal
         </div>
         <Image
-            src="https://images.pexels.com/photos/3552472/pexels-photo-3552472.jpeg?auto=compress&cs=tinysrgb&w=600"
+            src="https://images.pexels.com/photos/51951/forest-fire-fire-smoke-conservation-51951.jpeg?auto=compress&cs=tinysrgb&w=600"
             alt="Picture of the author"
             width={1000}
             height={500}
