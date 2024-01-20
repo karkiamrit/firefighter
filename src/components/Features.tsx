@@ -1,4 +1,4 @@
-import { DollarSign, Filter, Flame, Moon, SkullIcon, UserSearch, Zap } from 'lucide-react';
+import { DollarSign, Filter, Flame, Moon, Siren, SkullIcon, UserSearch, Zap } from 'lucide-react';
 import React from 'react';
 import Icon from '@/common/icons';
 
@@ -26,7 +26,7 @@ const Features = () => {
       title: 'Emergency Contact',
       description:
         'Access to emergency contact numbers, which can help you to contact the nearest fire station.',
-      icon: <UserSearch  type="career" size={100} color="#e82e47" />,
+      icon: <Siren   type="career" size={100} color="#e82e47" />,
     },
     {
       title: 'Educational Contents',
