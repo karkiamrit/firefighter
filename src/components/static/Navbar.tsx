@@ -149,10 +149,10 @@ export default function Navbar() {
                     <ListItem href="/" title="Helpline: +01 256482" />
                   </motion.span>
                   <motion.span whileHover={{ x: 8 }}>
-                    <ListItem href="/" title="Default msg: I need firefighters" />
+                    <ListItem href="/vcontent" title="Videos" />
                   </motion.span>
                   <motion.span whileHover={{ x: 8 }}>
-                    <ListItem href="/" title="FAQs" />
+                    <ListItem href="/faqs" title="FAQs" />
                   </motion.span>
                 </ul>
               </NavigationMenuContent>

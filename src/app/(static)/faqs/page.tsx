@@ -80,7 +80,7 @@ export default function FaqFour() {
           ))}
         </div>
         <p className="mt-10 text-center text-gray-600">
-          Can't find what you're looking for?
+          Can not find what you are looking for?
           <a href="/about" title="" className="black font-semibold hover:underline">
             Contact us
           </a>

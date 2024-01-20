@@ -3,7 +3,7 @@ import ncit from '@/../public/partners/Nepal_Police_logo.png';
 import stXavier from '@/../public/partners/apf.png';
 import trinity from '@/../public/partners/nepal scout.png';
 import dav from '@/../public/partners/red cross.png';
-import vsNiketan from '@/../public/partners/national logo.jpg';
+import vsNiketan from '@/../public/partners/download.jpg';
 import budhaNilkantha from '@/../public/partners/nepal army.png';
 import Image, { StaticImageData } from 'next/image';
 

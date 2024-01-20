@@ -4,7 +4,7 @@ import MaxWidthWrapper from '@/components/wrapper/MaxWidthWrapper';
 
 // Dynamically import ReactPlayer
 const ReactPlayer = dynamic(
-  () => import('react-player'),
+  () => import('react-player/lazy'),
   { ssr: false } // This line is important. It disables server-side rendering for ReactPlayer.
 );
 
@@ -21,7 +21,7 @@ export default function Page() {
     <>
       <MaxWidthWrapper>
         <div className="text-3xl md:text-4xl lg:text-5xl text-center font-semibold first-letter:text-primary mt-10">
-          Useful audio-visual Information{' '}
+          Aware Yourself
         </div>
         <div className="w-full flex flex-col gap-10 md:pl-10 md:pr-10 lg:pl-20 lg:pr-20 xl:pl-44 xl:pr-44 m-10 text-center">
           <div className="aspect-w-16 aspect-h-9">
@@ -34,6 +34,7 @@ export default function Page() {
             <ReactPlayer url={url.secondVideo} />
           </div>
         </div>
+        <div className="end first-letter:text-primary text-center text-2xl font-semibold">All caught up!</div>
       </MaxWidthWrapper>
     </>
   );
