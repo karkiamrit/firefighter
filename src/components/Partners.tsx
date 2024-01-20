@@ -1,10 +1,10 @@
 import React from 'react';
-import ncit from '@/../public/partners/ncit.jpg';
-import stXavier from '@/../public/partners/st-xavier.png';
-import trinity from '@/../public/partners/trinity.png';
-import dav from '@/../public/partners/dav.png';
-import vsNiketan from '@/../public/partners/vsniketan.png';
-import budhaNilkantha from '@/../public/partners/budhanilkantha.jpeg';
+import ncit from '@/../public/partners/Nepal_Police_logo.png';
+import stXavier from '@/../public/partners/apf.png';
+import trinity from '@/../public/partners/nepal scout.png';
+import dav from '@/../public/partners/red cross.png';
+import vsNiketan from '@/../public/partners/national logo.jpg';
+import budhaNilkantha from '@/../public/partners/nepal army.png';
 import Image, { StaticImageData } from 'next/image';
 
 const Partners = () => {
@@ -48,7 +48,7 @@ const Partners = () => {
   ];
   return (
     <>
-      <h2 className="text-4xl font-semibold text-center my-4 ">Our Partners</h2>
+      <h2 className="text-4xl font-semibold text-center my-4 first-letter:text-primary ">In Collaboration With</h2>
       <section className="relative ">
         <div className="relative mx-auto max-w-7xl px-4">
           <div className="mx-auto max-w-5xl">

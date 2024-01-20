@@ -17,7 +17,8 @@ import {
 import MaxWidthWrapper from '@/components/wrapper/MaxWidthWrapper';
 import { motion } from 'framer-motion';
 import { Button } from '../ui/button';
-import { AlignCenter, Menu, MenuIcon, MenuSquare } from 'lucide-react';
+import { AlertCircleIcon, AlignCenter, AreaChart, Flame, Menu, MenuIcon, MenuSquare } from 'lucide-react';
+import { MdCastForEducation } from 'react-icons/md';
 
 const services: {
   title: string;
@@ -29,27 +30,27 @@ const services: {
     title: 'Alerts & Warnings',
     href: '#',
     description: 'Get Alerts and Warnings of Fire and other disasters',
-    icon: <Icon type="calendar" size={40} color="#e82e47" />,
+    icon: <AlertCircleIcon type="calendar" size={40} color="#e82e47" />,
   },
   {
     title: 'Live Fire location',
-    href: '#',
+    href: '/map',
     description:
       'Live Fire location and status of the fire and other disasters within map',
-    icon: <Icon type="calendar" size={40} color="#e82e47" />,
+    icon: <Flame type="calendar" size={40} color="#e82e47" />,
   },
   {
     title: 'Posibilities of Firing Area',
     href: '#',
     description: 'According to the fire posibilities 1 | 0 you can get alert',
-    icon: <Icon type="calendar" size={40} color="#e82e47" />,
+    icon: <AreaChart type="calendar" size={40} color="#e82e47" />,
   },
   {
     title: 'Educational Contents | Blogs',
-    href: '#',
+    href: '/vcontent',
     description:
       'Get contents so that you can be aware of the fire and other disasters',
-    icon: <Icon type="calendar" size={40} color="#e82e47" />,
+    icon: <MdCastForEducation type="calendar" size={40} color="#e82e47" />,
   },
 ];
 
@@ -156,6 +157,13 @@ export default function Navbar() {
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
+          <NavigationMenuItem>
+              <Link href="/faqs" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  FAQs
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
       </MaxWidthWrapper>
@@ -191,6 +199,7 @@ const ListItem = React.forwardRef<React.ElementRef<'a'>, ListItemProps>(
             </span>
           </a>
         </NavigationMenuLink>
+       
       </li>
     );
   },
